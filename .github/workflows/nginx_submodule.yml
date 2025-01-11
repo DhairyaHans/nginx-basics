@@ -24,6 +24,11 @@ jobs:
       - name: Echo Hello
         run: echo "Lets update Tech n Learnings Submodules"
 
+      - name: Setup the Git Config
+        run: |
+          git config --global user.email ${{ secrets.EMAIL_GITHUB }}
+          git config --global user.name ${{ secrets.USERNAME_GITHUB }}
+
       - name: Clone Tech n Learnings
         run: |
           git clone https://github.com/DhairyaHans/Tech-n-Learnings.git
