@@ -43,6 +43,8 @@ jobs:
           git commit -am "NGINX Workflow: Updated Tech n Learning, NGINX submodule"
           echo "Committed"
           git status
+          echo 
+          git remote add origin https://${{ secrets.USERNAME_GITHUB }}@github.com/${{ secrets.USERNAME_GITHUB }}/Tech-n-Learnings.git
           echo "Push"
           git push
   
