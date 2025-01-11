@@ -1,5 +1,7 @@
 # Steps to Deploy an Application on NGINX
 
+> Reference Git -> [GIT NGINX AWS](https://gist.github.com/piyushgarg-dev/8b14c87c8ff4d626ecbc747b6b9fc57f)
+
 1. Create an AWS Account
 
 2. Create and Launch an EC2 instance
@@ -78,5 +80,5 @@
     ```
 
     // Only valid for 90 days, test the renewal process with
-    
+
     ```certbot renew --dry-run```
