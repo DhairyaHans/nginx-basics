@@ -36,6 +36,8 @@ jobs:
           git submodule update --init --recursive
           git submodule update --remote ./nginx/nginx-basics
           git add .
+          git status
           git commit -am "NGINX Workflow: Updated Tech n Learning, NGINX submodule"
+          git status
           git push
   
