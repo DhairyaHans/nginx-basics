@@ -35,9 +35,14 @@ jobs:
           cd Tech-n-Learnings
           git submodule update --init --recursive
           git submodule update --remote ./nginx/nginx-basics
+          git restore --staged .
+          echo "Restored"
           git add .
+          echo "Add"
           git status
           git commit -am "NGINX Workflow: Updated Tech n Learning, NGINX submodule"
+          echo "Committed"
           git status
+          echo "Push"
           git push
   
