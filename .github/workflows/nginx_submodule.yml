@@ -1,0 +1,34 @@
+name: Nginx Submodule Update
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Echo
+        run: echo "Welcome to NGINX Workflow"
+
+  update_Tech_n_Learnings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Echo Hello
+        run: echo "Lets update Tech n Learnings Submodules"
+
+      - name: Clone Tech n Learnings
+        run: |
+          git clone https://github.com/DhairyaHans/Tech-n-Learnings.git
+          cd Tech-n-Learnings
+          git submodule update --remote --merge
+          git commit -am "NGINX Workflow: Updated NGINX submodule"
+          git push
+  
