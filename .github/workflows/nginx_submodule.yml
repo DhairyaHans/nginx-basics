@@ -31,10 +31,9 @@ jobs:
 
       - name: Clone Tech n Learnings
         run: |
-          git clone https://github.com/DhairyaHans/Tech-n-Learnings.git
+          git clone --recurse-submodules https://github.com/DhairyaHans/Tech-n-Learnings.git
           cd Tech-n-Learnings
-          git submodule update --init --recursive
-          git submodule update --remote ./nginx/nginx-basics
+          git submodule update --remote --merge ./nginx/nginx-basics
           git restore --staged .
           echo "Restored"
           git add .
