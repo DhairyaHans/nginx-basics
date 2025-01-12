@@ -15,6 +15,27 @@ jobs:
       - name: Echo
         run: echo "Welcome to NGINX Workflow"
 
+  send_email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Echo Email
+        run: echo "Sending Email"
+        
+      - name: Send Email
+        uses: dawidd6/action-send-mail@v2.0.0
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_GMAIL }}
+          password: ${{ secrets.PASSWORD_GMAIL }}
+          subject: "NGINX Workflow: Email Notification"
+          body: "NGINX Workflow: Email Notification"
+          to: ${{ secrets.RECEIVER_EMAIL }}
+          from: ${{ secrets.EMAIL_GMAIL }}
+
   update_Tech_n_Learnings:
     runs-on: ubuntu-latest
     steps:
