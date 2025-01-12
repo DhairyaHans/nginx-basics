@@ -28,7 +28,13 @@ jobs:
         run: |
           git config --global user.email ${{ secrets.EMAIL_GITHUB }}
           git config --global user.name ${{ secrets.USERNAME_GITHUB }}
-
+        
+      # Update the PAT in the github secrets, to get the access to the repository
+      # Go to GitHub Settings > Developer Settings > Personal Access Tokens.
+      # Click Generate New Token.
+      # Select repo scope for repository access and set an expiration.
+      # Copy the token (you will not see it again).
+      # Update the PAT in the github secrets
       - name: Clone Tech n Learnings
         run: |
           git clone --recurse-submodules https://${{ secrets.PAT }}@github.com/DhairyaHans/Tech-n-Learnings.git
